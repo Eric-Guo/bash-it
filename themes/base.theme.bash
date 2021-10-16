@@ -102,9 +102,9 @@ RBFU_THEME_PROMPT_SUFFIX='|'
 
 function _bash_it_appearance_scm_init() {
 	GIT_EXE="$(type -P "${SCM_GIT:-git}" || true)"
-	HG_EXE="$(type -P "${SCM_HG:-hg}" || true)"
-	SVN_EXE="$(type -P "${SCM_SVN:-svn}" || true)"
-	P4_EXE="$(type -P "${SCM_P4:-p4}" || true)"
+	HG_EXE=false
+	SVN_EXE=false
+	P4_EXE=false
 
 	# Check for broken SVN exe that is caused by some versions of Xcode.
 	# See https://github.com/Bash-it/bash-it/issues/1612 for more details.
