@@ -16,7 +16,7 @@ function disable-proxy() {
 
 	npm-disable-proxy
 	ssh-disable-proxy
-	svn-disable-proxy
+	# svn-disable-proxy
 }
 
 function enable-proxy() {
@@ -34,7 +34,7 @@ function enable-proxy() {
 
 	npm-enable-proxy
 	ssh-enable-proxy
-	svn-enable-proxy
+	# svn-enable-proxy
 }
 
 function enable-proxy-alt() {
@@ -52,7 +52,7 @@ function enable-proxy-alt() {
 
 	npm-enable-proxy "${http_proxy:-}" "${https_proxy:-}"
 	ssh-enable-proxy
-	svn-enable-proxy "${http_proxy:-}"
+	# svn-enable-proxy "${http_proxy:-}"
 }
 
 function show-proxy() {
@@ -67,7 +67,7 @@ function show-proxy() {
 	bash-it-show-proxy
 	npm-show-proxy
 	git-global-show-proxy
-	svn-show-proxy
+	# svn-show-proxy
 	ssh-show-proxy
 }
 
