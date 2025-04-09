@@ -92,7 +92,7 @@ THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%Y-%m-%d %H:%M:%S"}
 
 # Displays the current prompt
 function prompt_command() {
-	PS1="\n${icon_start}$(_theme_clock)${icon_user}${bold_green?}\u${normal?}${icon_host}${bold_cyan?}\h${normal?}${green?}$(_virtualenv_prompt)${normal?}${icon_directory}${bold_purple?}\W${normal?}\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on ${icon_branch} $(scm_prompt_info) \")${white?}${normal}\n${icon_end}"
+	PS1="\n${icon_start}$(_theme_clock)${normal?}${green?}$(_virtualenv_prompt)${normal?}${icon_directory}${bold_purple?}\W${normal?}\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on ${icon_branch} $(scm_prompt_info) \")${white?}${normal}\n${icon_end}"
 	PS2="${icon_end}"
 }
 
