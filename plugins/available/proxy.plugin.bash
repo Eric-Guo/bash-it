@@ -113,9 +113,9 @@ function npm-show-proxy() {
 		echo ""
 		echo "npm"
 		echo "==="
-		echo "npm HTTP  proxy: $(npm config get proxy)"
-		echo "npm HTTPS proxy: $(npm config get https-proxy)"
-		echo "npm proxy exceptions: $(npm config get noproxy)"
+		echo "npm HTTP  proxy: $(npm --workspaces=false config get proxy)"
+		echo "npm HTTPS proxy: $(npm --workspaces=false config get https-proxy)"
+		echo "npm proxy exceptions: $(npm --workspaces=false config get noproxy)"
 	fi
 }
 
@@ -124,9 +124,9 @@ function npm-disable-proxy() {
 	group 'proxy'
 
 	if _command_exists npm; then
-		npm config delete proxy
-		npm config delete https-proxy
-		npm config delete noproxy
+		npm --workspaces=false config delete proxy
+		npm --workspaces=false config delete https-proxy
+		npm --workspaces=false config delete noproxy
 		echo "Disabled npm proxy settings"
 	fi
 }
@@ -140,9 +140,9 @@ function npm-enable-proxy() {
 	local my_no_proxy="${3:-${BASH_IT_NO_PROXY:-}}"
 
 	if _command_exists npm; then
-		npm config set proxy "${my_http_proxy:?}" || return
-		npm config set https-proxy "${my_https_proxy:?}" || return
-		npm config set noproxy "${my_no_proxy:-}" || return
+		npm --workspaces=false config set proxy "${my_http_proxy:?}" || return
+		npm --workspaces=false config set https-proxy "${my_https_proxy:?}" || return
+		npm --workspaces=false config set noproxy "${my_no_proxy:-}" || return
 		echo "Enabled npm proxy settings"
 	fi
 }
